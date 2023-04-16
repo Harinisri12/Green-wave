@@ -1,0 +1,534 @@
+@import url("https://use.typekit.net/ykf1xtx.css");
+body {
+  background-color: #ffffff;
+}
+
+body {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "sofia-pro", sans-serif;
+  cursor: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1518293165/hcc/hand4.svg"), auto;
+  counter-reset: game;
+}
+
+.game {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.goodObject:checked {
+  counter-increment: game 2;
+}
+
+.badObject:checked {
+  counter-increment: game -1;
+}
+
+.score::after {
+  content: counter(game);
+  height: 40%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+
+#badObjects input[type=checkbox],
+#goodObjects input[type=checkbox] {
+  width: 120px;
+  top: -180px;
+  height: 120px;
+  position: absolute;
+  background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  cursor: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1518293165/hcc/grab4.svg"), auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 20px;
+  margin: 20px;
+}
+
+.goodObject:nth-child(1) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good3.svg");
+  animation-duration: 5.1722122411s;
+  animation-delay: 11.7162577591s;
+  left: 83%;
+}
+.goodObject:nth-child(2) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good2.svg");
+  animation-duration: 4.5625691319s;
+  animation-delay: 11.0544471525s;
+  left: 88%;
+}
+.goodObject:nth-child(3) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good2.svg");
+  animation-duration: 3.412041594s;
+  animation-delay: 12.3012284939s;
+  left: 65%;
+}
+.goodObject:nth-child(4) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good3.svg");
+  animation-duration: 5.299791591s;
+  animation-delay: 9.6815641404s;
+  left: 69%;
+}
+.goodObject:nth-child(5) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good1.svg");
+  animation-duration: 4.2736302246s;
+  animation-delay: 11.981297313s;
+  left: 59%;
+}
+.goodObject:nth-child(6) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good3.svg");
+  animation-duration: 4.0549043323s;
+  animation-delay: 12.0256553909s;
+  left: 12%;
+}
+.goodObject:nth-child(7) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good2.svg");
+  animation-duration: 3.7365824658s;
+  animation-delay: 10.7361450935s;
+  left: 24%;
+}
+.goodObject:nth-child(8) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good1.svg");
+  animation-duration: 3.0461843669s;
+  animation-delay: 12.1154269165s;
+  left: 70%;
+}
+.goodObject:nth-child(9) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good1.svg");
+  animation-duration: 4.418138833s;
+  animation-delay: 10.4234039632s;
+  left: 13%;
+}
+.goodObject:nth-child(10) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good3.svg");
+  animation-duration: 5.7123312452s;
+  animation-delay: 12.0155045886s;
+  left: 41%;
+}
+
+.badObject:nth-child(1) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad1.svg");
+  animation-duration: 4.9756479185s;
+  animation-delay: 9.2925978251s;
+  left: 12%;
+}
+.badObject:nth-child(2) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad5.svg");
+  animation-duration: 4.9831109112s;
+  animation-delay: 11.0389560969s;
+  left: 23%;
+}
+.badObject:nth-child(3) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad1.svg");
+  animation-duration: 4.3046370246s;
+  animation-delay: 12.2550743237s;
+  left: 74%;
+}
+.badObject:nth-child(4) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad1.svg");
+  animation-duration: 3.7192034709s;
+  animation-delay: 11.5686680676s;
+  left: 86%;
+}
+.badObject:nth-child(5) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad4.svg");
+  animation-duration: 4.7272960296s;
+  animation-delay: 12.4245867135s;
+  left: 61%;
+}
+.badObject:nth-child(6) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad3.svg");
+  animation-duration: 4.6384782812s;
+  animation-delay: 11.3435727586s;
+  left: 16%;
+}
+.badObject:nth-child(7) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad1.svg");
+  animation-duration: 3.2255787416s;
+  animation-delay: 12.6732318532s;
+  left: 44%;
+}
+.badObject:nth-child(8) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad5.svg");
+  animation-duration: 5.1625990227s;
+  animation-delay: 11.6467835822s;
+  left: 19%;
+}
+.badObject:nth-child(9) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad5.svg");
+  animation-duration: 5.6133826496s;
+  animation-delay: 10.2228574364s;
+  left: 76%;
+}
+.badObject:nth-child(10) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/bad1.svg");
+  animation-duration: 5.0347662433s;
+  animation-delay: 11.6902770433s;
+  left: 49%;
+}
+
+.score {
+  position: relative;
+  margin: 0;
+  color: #f0f8ff24;
+  font-size: 50vh;
+  position: absolute;
+  top: 10vh;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  text-align: center;
+  z-index: 2;
+}
+
+input[type=checkbox] {
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type=checkbox]:focus {
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type=checkbox]:checked {
+  pointer-events: none;
+  -webkit-animation: hitFade 2s;
+  animation: hitFade 2s;
+}
+
+@keyframes hitFade {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#badObjects input[type=checkbox]:checked:after, #goodObjects input[type=checkbox]:checked:after {
+  position: fixed;
+  left: 0;
+  top: 20vh;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  font-size: 8.5em;
+  font-weight: 600;
+  animation: fade 1s;
+  z-index: -1;
+  opacity: 0;
+}
+
+#badObjects input[type=checkbox]:checked:after {
+  content: "-1!";
+  color: red;
+}
+
+#goodObjects input[type=checkbox]:checked:after {
+  content: "+2!";
+  color: white;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.goodObject,
+.badObject {
+  animation-name: falling;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 3;
+}
+
+@keyframes falling {
+  from {
+    transform: translateY(-120px);
+  }
+  to {
+    transform: translateY(150vh);
+  }
+}
+.rules {
+  opacity: 1;
+  display: block;
+  width: auto;
+  height: auto;
+  text-align: center;
+  padding: 0px 50px 30px;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 2px 1px 1px rgba(56, 58, 68, 0.466);
+  box-shadow: 2px 2px 1px 1pxrgba 56, 58, 68, 0.466;
+  border-radius: 6px;
+  z-index: 9999;
+  overflow-y: scroll;
+  max-height: 90vh;
+}
+
+.rules h1 {
+  text-align: center;
+  font-weight: 900;
+  font-family: "sofia-pro", sans-serif;
+}
+
+.rulesCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.items {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  justify-content: space-around;
+}
+
+.items img {
+  width: 40px;
+  height: 40px;
+}
+
+.item {
+  width: 300px;
+  height: auto;
+  text-align: center;
+}
+
+.avoid,
+.collect {
+  position: relative;
+  width: 40%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.startScreen,
+.endScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #cfffcc;
+}
+
+.startScreen {
+  opacity: 0;
+  z-index: -9999;
+  animation: fadeOut 9s linear;
+}
+
+.endScreen {
+  opacity: 1;
+  z-index: 9999;
+  animation: fadeIn 25s linear;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    z-index: 9999;
+  }
+  90% {
+    opacity: 1;
+    z-index: 9999;
+  }
+  98% {
+    opacity: 0;
+    z-index: 9999;
+  }
+  100% {
+    z-index: -9999;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    z-index: -9999;
+  }
+  97% {
+    opacity: 0;
+    z-index: -9999;
+  }
+  98% {
+    opacity: 0;
+    z-index: 9999;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.countdownBar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 5;
+  background-color: #cfffcc;
+  height: 50px;
+}
+
+.countdownBar:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #388da0;
+  left: 0;
+  animation: countDown 20s 10s linear;
+}
+
+@keyframes countDown {
+  0% {
+    width: 0%;
+  }
+  85% {
+    width: 85%;
+    background-color: #388da0;
+  }
+  85.1% {
+    width: 85.1%;
+    background-color: #c56971;
+  }
+  100% {
+    width: 100%;
+    background-color: #c56971;
+  }
+}
+@import url("https://use.typekit.net/ykf1xtx.css");
+
+body {
+  background-color: #FFFFFF;
+}
+
+body {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "sofia-pro", sans-serif;
+  cursor: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1518293165/hcc/hand4.svg"), auto;
+  counter-reset: game;
+}
+
+.game {
+  width: 100%;
+  height: 100%;
+  background-color: #cfffcc;
+  z-index: 1;
+}
+
+.goodObject:checked {
+  counter-increment: game 2;
+}
+
+.badObject:checked {
+  counter-increment: game -1;
+}
+
+.score::after {
+  content: counter(game);
+  height: 40%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: center;
+}
+
+#badObjects input[type=checkbox],
+#goodObjects input[type=checkbox] {
+  width: 120px;
+  top: -180px;
+  height: 120px;
+  position: absolute;
+  background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  cursor: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1518293165/hcc/grab4.svg"), auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 20px;
+  margin: 20px;
+}
+
+.goodObject:nth-child(1) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good3.svg");
+  animation-duration: 5.1722122411s;
+  animation-delay: 11.7162577591s;
+  left: 83%;
+}
+.goodObject:nth-child(2) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good2.svg");
+  animation-duration: 4.5625691319s;
+  animation-delay: 11.0544471525s;
+  left: 88%;
+}
+.goodObject:nth-child(3) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good2.svg");
+  animation-duration: 3.412041594s;
+  animation-delay: 12.3012284939s;
+  left: 65%;
+}
+.goodObject:nth-child(4) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good3.svg");
+  animation-duration: 5.299791591s;
+  animation-delay: 9.6815641404s;
+  left: 69%;
+}
+.goodObject:nth-child(5) {
+  background: url("https://res.cloudinary.com/dilgjzsjl/image/upload/v1517495694/hcc/icons/good1.svg");
+  animation-duration: 4.2736302246s;
+  animation-delay: 11.981297313s;
+  left:

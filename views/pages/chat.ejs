@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%# Head %>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CHAT BOT - Green Wave</title>
+    <link rel="stylesheet" href="/styles/chat.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" />
+		<link rel="stylesheet" href="/styles/style.css" type="text/css" />
+		<link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <script src="https://kit.fontawesome.com/43c1b0f304.js" crossOrigin="anonymous"></script>
+
+
+	</head>
+	<%# End of Head %>
+	<body>
+		<%# Import nav %>
+		<header>
+			<%- include('../partials/nav') %>
+		</header>
+
+<main id="main">
+  <div class="chat-box-container">
+    <h1 class="chat-box-header"> Chat Bot </h1>
+    <div class="chat-box">
+
+    </div>
+  </div>
+  <div class="chat-input-container">
+    <input class="chat-input" type="text" name="chat-input" value="">
+    <button class="chat-submit" type="button" name="submit">Submit</button>
+  </div>
+</main>
+<script>
+(function() {
+
+  "use strict";
+
+  const responses = [
+    "Carry your bread home in style without any packaging waste. The Reusable Bread Bag is made from up to 10x recycled plastic drink bottles and is designed to replace single use paper or plastic bread bags, plastic toggles and ties." , "The Reusable Bulk Food Bags were designed to help people easily and conveniently transport their bulk food purchases home.","Sea2see collects ocean plastic waste, nets, and ropes in coordination with fishing communities in Spain to create their Italian designed eyewear. Collecting an average of one tonne of plastic waste every second day, selected plastic waste is used as the raw material for their eyeglasses ","Over 600,000 tonnes of non-recyclable vinyl from billboard banners alone finds its way to landfills each year. RAREFORM took note and rescues this durable material to create one of a kind wallets and other products, including bike bags, iPhone cases and more.","Do you have a dog at home? If you do, you probably go through quite a few waste bags each month taking him or her on walks. Now when your pet is creating waste, you don’t have to.The Onya 100% GMO free renewable plant based Dog Waste Disposal Bag Set comes with a carry pouch and 30 disposal bags that are certified both home and industrial compostable."
+  ];
+
+  const submit = document.querySelector(".chat-submit");
+  const chatBox = document.querySelector(".chat-box");
+  const chatInput = document.querySelector(".chat-input");
+
+  // const aiThinking = false;
+
+  function chatTemplate(aiOrPerson) {
+    return (
+      `
+        <div class="ai-person-container">
+          <div class="${aiOrPerson.class}">
+            <p>${aiOrPerson.text}</p>
+          </div>
+          <span class="${aiOrPerson.class}-date">${aiOrPerson.date}</span>
+        </div>
+      `
+    );
+  }
+
+  submit.addEventListener("click", function(e) {
+    appendChatBox(true);
+  });
+
+  document.addEventListener("keypress", function(e) {
+    if (e.keyCode == "13") {
+      appendChatBox(true);
+    }
+  })
+
+  function appendChatBox(fromPerson) {
+    const date = new Date()
+    if (!fromPerson){
+      date.setSeconds(date.getSeconds() + 2)
+    }
+    if (fromPerson && !chatInput.value.trim()) {
+      return;
+    }
+    const timestamp = date.toLocaleTimeString()
+    const newChatDiv = chatTemplate({
+      class: fromPerson ? "person" : "ai",
+      text: fromPerson ? chatInput.value.trim() : aiResponse(),
+      date: timestamp
+    });
+    if (!fromPerson) {
+      // make it so it only responds once to multiple fast sentences
+      setTimeout(function() {
+        chatBox.innerHTML += newChatDiv;
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 2000)
+    } else {
+      chatBox.innerHTML += newChatDiv;
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+    if (fromPerson) {
+      chatInput.value = "";
+      appendChatBox(false);
+    }
+  }
+
+  function aiResponse() {
+    const responseIndex = getRandomInt(0, responses.length - 1);
+    const response = responses[responseIndex];
+    return response;
+  }
+
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+}())
+</script>
+<%# Import footer %>
+		<footer>
+			<%- include('../partials/footer') %>
+		</footer>
